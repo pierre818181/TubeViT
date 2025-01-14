@@ -12,7 +12,7 @@ from torchvision.transforms._transforms_video import ToTensorVideo
 
 from tubevit.dataset import MyUCF101
 from tubevit.model import TubeViTLightningModule
-
+from lightning.pytorch.accelerators import find_usable_cuda_devices
 
 @click.command()
 @click.option("-r", "--dataset-root", type=click.Path(exists=True), required=True, help="path to dataset.")
@@ -144,7 +144,7 @@ def main(
         mlp_dim=3072,
         lr=1e-4,
         weight_decay=0.001,
-        weight_path="tubevit_b_(a+iv)+(d+v)+(e+iv)+(f+v).pt",
+        # weight_path="tubevit_b_(a+iv)+(d+v)+(e+iv)+(f+v).pt",
         max_epochs=max_epochs,
     )
 
