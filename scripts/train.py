@@ -157,6 +157,7 @@ def main(
         fast_dev_run=fast_dev_run,
         logger=logger,
         callbacks=callbacks,
+        default_root_dir="/workspace",
     )
     trainer.fit(model, train_dataloaders=train_dataloader, val_dataloaders=val_dataloader)
     trainer.save_checkpoint("./models/tubevit_ucf101.ckpt")
